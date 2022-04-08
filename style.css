@@ -1,0 +1,99 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.flex-container{
+    height: 100vh;
+    width: 100vw;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(49, 49, 49);
+}
+
+.boy-container{
+    height: 200px;
+    width : 400px;
+    position: relative;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-25%);
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    transition: all 0.3s;
+
+}
+
+li{
+    margin:10px;
+    color:white;
+    font-size: 2rem;
+    border: 1px solid white;
+    padding:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.selected-li{
+    transform: scale(1.1);
+    background-color: white;
+    color:rgb(57, 57, 57);
+    transition: all 0.3s;
+}
+
+li:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color:rgb(57, 57, 57);
+    transition: all 0.3s;
+}
+
+.key-press-notification{
+    position: absolute;
+    top:0%;
+    left:50%;
+    font-size: 2rem;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding:10px;
+    opacity: 0;
+}
+
+.key-press-notification-show{
+    animation-name: key-press-notification-show-animation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes key-press-notification-show-animation {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@media (max-width:600px){
+    ul{
+        flex-direction: column;
+    }
+}
